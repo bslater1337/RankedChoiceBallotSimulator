@@ -7,7 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Include="obj\Debug\ElectionResult.cs" />
+      <Compile Include="obj\ElectionResult.cs" />
       <Compile Include="obj\ElectionSimulator.cs" />
+      <Compile Include="obj\interfaces\ICandidate.cs" />
+      <Compile Include="obj\interfaces\IElectionResult.cs" />
+      <Compile Include="obj\interfaces\IElectionRunOff.cs" />
     </ItemGroup>
 
 </Project>

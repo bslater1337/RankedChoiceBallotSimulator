@@ -1,8 +1,10 @@
+using RankedChoiceBallotSimulator.obj.interfaces;
+
 namespace RankedChoiceBallotSimulator.obj;
 
 public class ElectionSimulator
 {
-    public object SimulateElection()
+    public IElectionResult SimulateElection()
     {
         throw new NotImplementedException();
     }

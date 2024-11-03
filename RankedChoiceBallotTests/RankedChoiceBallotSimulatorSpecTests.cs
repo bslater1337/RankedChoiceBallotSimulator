@@ -1,4 +1,6 @@
+using FluentAssertions;
 using RankedChoiceBallotSimulator.obj;
+using RankedChoiceBallotSimulator.obj.interfaces;
 
 namespace RankedChoiceBallotTests;
 
@@ -15,13 +17,24 @@ public class RankedChoiceBallotSimulatorSpecTests
     {
     var simulator = new ElectionSimulator();
         
-    var results = simulator.SimulateElection();
+    var result = simulator.SimulateElection();
 
-    VerifyResults();
+    VerifyResults(result);
     }
 
-    private void VerifyResults()
+    private void VerifyResults(IElectionResult result)
     {
-        throw new NotImplementedException();
+        VerifyRunOffCountDecrements(result);
+    }
+
+    private static void VerifyRunOffCountDecrements(IElectionResult result)
+    {
+        var  initialCount = result.Primary.Candidates.Count;
+        
+        var firstRunOffCount = result.RunOffs.First().Candidates.Count;
+        
+        var difference = initialCount - firstRunOffCount;
+
+        difference.Should().Be(1);
     }
 }
