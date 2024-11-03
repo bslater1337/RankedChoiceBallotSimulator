@@ -18,7 +18,7 @@ public class ElectionSimulatorTests
     {
         _electionResult = new Mock<IElectionResult>(MockBehavior.Strict);
         var ballot = new Mock<IBallot>(MockBehavior.Strict);
-        ballot.Setup(x => x.Vote());
+        ballot.Setup(x => x.CastInitialVote());
         _ballots = [ballot.Object];
         _electorate = new Mock<IElectorate>(MockBehavior.Strict);
         _electorate.Setup(x => x.TallyVotes(_ballots)).Returns(_electionResult.Object);
@@ -27,6 +27,6 @@ public class ElectionSimulatorTests
         var result = _sut.SimulateElection();
         
         result.Should().Be(_electionResult.Object);
-        ballot.Verify(x => x.Vote(),Times.Once());
+        ballot.Verify(x => x.CastInitialVote(),Times.Once());
     }
 }

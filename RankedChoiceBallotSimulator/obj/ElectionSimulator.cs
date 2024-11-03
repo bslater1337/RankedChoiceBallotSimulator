@@ -20,7 +20,7 @@ public class ElectionSimulator
 
     public IElectionResult SimulateElection()
     {
-        _ballots.ForEach(b => b.Vote());
+        _ballots.ForEach(b => b.CastInitialVote());
 
         return _electorate.TallyVotes(_ballots);
     }

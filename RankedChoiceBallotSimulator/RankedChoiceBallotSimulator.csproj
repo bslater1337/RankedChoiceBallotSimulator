@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Include="obj\Ballot.cs" />
       <Compile Include="obj\ElectionSimulator.cs" />
       <Compile Include="obj\Electorate.cs" />
       <Compile Include="obj\interfaces\IBallot.cs" />
@@ -14,6 +15,9 @@
       <Compile Include="obj\interfaces\IElectionResult.cs" />
       <Compile Include="obj\interfaces\IElectionRunOff.cs" />
       <Compile Include="obj\interfaces\IElectorate.cs" />
+      <Compile Include="obj\interfaces\IRanking.cs" />
+      <Compile Include="obj\interfaces\IVoteManager.cs" />
+      <Compile Include="obj\interfaces\IVotingGuide.cs" />
     </ItemGroup>
 
 </Project>
